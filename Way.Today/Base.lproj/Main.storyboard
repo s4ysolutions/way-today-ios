@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,42 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Way_Today" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wQ-TD-V6h">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wQ-TD-V6h">
+                                <rect key="frame" x="10" y="90" width="300" height="300"/>
                                 <state key="normal" backgroundImage="on"/>
                                 <connections>
                                     <action selector="clickOnOff:" destination="BYZ-38-t0r" eventType="touchDown" id="EEB-2U-xQx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi4-Wb-cQP" userLabel="Button Refresh">
+                                <rect key="frame" x="268" y="36" width="44" height="44"/>
+                                <state key="normal" backgroundImage="refresh"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="elI-rm-8Ih">
+                                <rect key="frame" x="138" y="428" width="44" height="44"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="led_rect_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-tq-8Fq">
+                                <rect key="frame" x="136" y="396" width="48" height="24"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="LnW-vy-XI3">
+                                <rect key="frame" x="198" y="428" width="44" height="44"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AhO-Sz-oKx"/>
-                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PVg-PN-6Dx"/>
+                            <constraint firstItem="elI-rm-8Ih" firstAttribute="bottomMargin" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="7Su-Gm-Lxr"/>
+                            <constraint firstItem="LnW-vy-XI3" firstAttribute="leading" secondItem="elI-rm-8Ih" secondAttribute="trailing" constant="16" id="8o6-GE-Q9h"/>
+                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dvg-DP-XFa"/>
+                            <constraint firstItem="elI-rm-8Ih" firstAttribute="centerX" secondItem="Y2g-tq-8Fq" secondAttribute="centerX" id="GLF-ca-Eq8"/>
+                            <constraint firstItem="elI-rm-8Ih" firstAttribute="bottom" secondItem="LnW-vy-XI3" secondAttribute="bottom" id="HhC-nY-wt1"/>
+                            <constraint firstItem="elI-rm-8Ih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MQv-dG-j12"/>
+                            <constraint firstItem="vi4-Wb-cQP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="Mn8-G4-AAp"/>
+                            <constraint firstItem="Y2g-tq-8Fq" firstAttribute="bottom" secondItem="elI-rm-8Ih" secondAttribute="top" constant="-8" id="O2B-Zp-JEI"/>
+                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f9i-Vf-UW2"/>
+                            <constraint firstItem="vi4-Wb-cQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wk5-gm-lRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,10 +60,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="25.637181409295355"/>
+            <point key="canvasLocation" x="39.375" y="25"/>
         </scene>
     </scenes>
     <resources>
+        <image name="led_rect_yellow" width="48" height="24"/>
         <image name="on" width="300" height="300"/>
+        <image name="pin" width="44" height="44"/>
+        <image name="refresh" width="44" height="44"/>
+        <image name="upload" width="44" height="44"/>
     </resources>
 </document>
