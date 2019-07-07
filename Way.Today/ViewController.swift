@@ -42,7 +42,6 @@ class ViewController: UIViewController {
     if (labelToAnimate != nil) {
       labelToAnimate!.alpha=1.0
       labelToAnimate!.isHidden = false
-      print("start...")
       UIView.animate(withDuration: 1.0,
                      animations: {labelToAnimate!.alpha=0.0},
                      completion: {ok in labelToAnimate!.isHidden = true})
@@ -51,14 +50,12 @@ class ViewController: UIViewController {
                         duration: 2.0,
                         options: [.transitionCurlUp],
                         animations: {
-                          print("anim")
                           labelToAnimate!.alpha=0.0
 
       },
                         completion: {
                           ok in
                           labelToAnimate!.isHidden = true
-                          print("complete...")
 
       })
  */
