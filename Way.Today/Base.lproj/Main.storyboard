@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="landscape">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,56 +15,63 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Way_Today" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wQ-TD-V6h">
-                                <rect key="frame" x="90" y="10" width="300" height="300"/>
-                                <state key="normal" backgroundImage="on"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="700" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wQ-TD-V6h">
+                                <rect key="frame" x="10" y="28" width="300" height="360"/>
+                                <state key="normal" image="on"/>
                                 <connections>
                                     <action selector="clickOnOff:" destination="BYZ-38-t0r" eventType="touchDown" id="EEB-2U-xQx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi4-Wb-cQP" userLabel="Button Refresh">
-                                <rect key="frame" x="428" y="16" width="44" height="44"/>
+                                <rect key="frame" x="268" y="36" width="44" height="44"/>
                                 <state key="normal" backgroundImage="refresh"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="elI-rm-8Ih">
-                                <rect key="frame" x="218" y="268" width="44" height="44"/>
+                                <rect key="frame" x="138" y="428" width="44" height="44"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="led_rect_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-tq-8Fq" userLabel="pin_led">
-                                <rect key="frame" x="216" y="236" width="48" height="24"/>
+                                <rect key="frame" x="136" y="396" width="48" height="24"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="LnW-vy-XI3">
-                                <rect key="frame" x="278" y="268" width="44" height="44"/>
+                                <rect key="frame" x="198" y="428" width="44" height="44"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="led_rect_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="uSA-AC-8Xd" userLabel="upload_led">
-                                <rect key="frame" x="276" y="236" width="48" height="24"/>
+                                <rect key="frame" x="196" y="396" width="48" height="24"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="Log-W2-2Fb">
-                                <rect key="frame" x="158" y="268" width="44" height="44"/>
+                                <rect key="frame" x="78" y="428" width="44" height="44"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="led_rect_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="SHe-9F-N3p">
-                                <rect key="frame" x="156" y="236" width="48" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="led_rect_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="SHe-9F-N3p" userLabel="gps_led">
+                                <rect key="frame" x="76" y="396" width="48" height="24"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oji-K3-dnC" userLabel="button_sound">
+                                <rect key="frame" x="18" y="428" width="44" height="44"/>
+                                <state key="normal" backgroundImage="sound_on"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="bottomMargin" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="7Su-Gm-Lxr"/>
                             <constraint firstItem="LnW-vy-XI3" firstAttribute="leading" secondItem="elI-rm-8Ih" secondAttribute="trailing" constant="16" id="8o6-GE-Q9h"/>
-                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dvg-DP-XFa"/>
                             <constraint firstItem="Y2g-tq-8Fq" firstAttribute="bottom" secondItem="SHe-9F-N3p" secondAttribute="bottom" id="GEu-f1-hCq"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="centerX" secondItem="Y2g-tq-8Fq" secondAttribute="centerX" id="GLF-ca-Eq8"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="bottom" secondItem="LnW-vy-XI3" secondAttribute="bottom" id="HhC-nY-wt1"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MQv-dG-j12"/>
                             <constraint firstItem="vi4-Wb-cQP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="Mn8-G4-AAp"/>
                             <constraint firstItem="Y2g-tq-8Fq" firstAttribute="bottom" secondItem="elI-rm-8Ih" secondAttribute="top" constant="-8" id="O2B-Zp-JEI"/>
+                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJ3-IG-Nof"/>
                             <constraint firstItem="Log-W2-2Fb" firstAttribute="centerX" secondItem="SHe-9F-N3p" secondAttribute="centerX" id="Y3a-mY-Ldn"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="bottom" secondItem="Log-W2-2Fb" secondAttribute="bottom" id="a5x-vf-5BP"/>
                             <constraint firstItem="Y2g-tq-8Fq" firstAttribute="bottom" secondItem="uSA-AC-8Xd" secondAttribute="bottom" id="b3y-U7-2dc"/>
-                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f9i-Vf-UW2"/>
+                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="bottom" secondItem="Y2g-tq-8Fq" secondAttribute="top" constant="-8" id="eNr-ea-nS6"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="leading" secondItem="Log-W2-2Fb" secondAttribute="trailing" constant="16" id="l8N-FX-EUn"/>
+                            <constraint firstItem="Log-W2-2Fb" firstAttribute="leading" secondItem="oji-K3-dnC" secondAttribute="trailing" constant="16" id="qDZ-eb-sch"/>
                             <constraint firstItem="LnW-vy-XI3" firstAttribute="centerX" secondItem="uSA-AC-8Xd" secondAttribute="centerX" id="rwg-Zj-EmC"/>
+                            <constraint firstItem="Log-W2-2Fb" firstAttribute="centerY" secondItem="oji-K3-dnC" secondAttribute="centerY" id="tZd-Ci-UaR"/>
+                            <constraint firstItem="7wQ-TD-V6h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="ttg-1i-6ih"/>
                             <constraint firstItem="vi4-Wb-cQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wk5-gm-lRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -84,6 +91,7 @@
         <image name="on" width="300" height="300"/>
         <image name="pin" width="44" height="44"/>
         <image name="refresh" width="44" height="44"/>
+        <image name="sound_on" width="44" height="44"/>
         <image name="upload" width="44" height="44"/>
     </resources>
 </document>

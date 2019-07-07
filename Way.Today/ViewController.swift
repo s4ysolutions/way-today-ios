@@ -40,9 +40,9 @@ class ViewController: UIViewController {
 
   private func setButtonOnOffBackgroundImage() {
     if waytoday.on {
-      buttonOnOff.setBackgroundImage(self.onImage, for: UIControl.State.normal)
+      buttonOnOff.setImage(self.onImage, for: UIControl.State.normal)
     }else{
-      buttonOnOff.setBackgroundImage(self.offImage, for: UIControl.State.normal)
+      buttonOnOff.setImage(self.offImage, for: UIControl.State.normal)
     }
   }
 
