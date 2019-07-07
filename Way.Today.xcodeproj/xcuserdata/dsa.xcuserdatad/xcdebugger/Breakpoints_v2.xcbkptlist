@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Way.Today/Models/WayTodayStateDefault.swift"
-            timestampString = "584185376.247649"
+            timestampString = "584201073.234264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "WayTodayStateDefault"
-            landmarkType = "3">
+            landmarkName = "on"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Way.Today/Models/WayTodayStateDefault.swift"
-            timestampString = "584185376.247798"
+            timestampString = "584201073.234345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Way.Today/Models/WayTodayStateDefault.swift"
-            timestampString = "584185376.247874"
+            timestampString = "584201073.234413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"

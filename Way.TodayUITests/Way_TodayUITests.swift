@@ -29,6 +29,9 @@ class Way_TodayUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      //XCUIElementQuery().matching("button_on_off")
+      let app = XCUIApplication()
+      app.buttons["button_on_off"].tap()
     }
 
 }

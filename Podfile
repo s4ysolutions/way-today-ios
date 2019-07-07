@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 target 'Way.Today' do
-  platform :ios, '4.0'
+  platform :ios, '8.0'
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -11,12 +11,13 @@ target 'Way.Today' do
   pod 'SwiftGRPC'
 
   target 'Way.TodayTests' do
-    inherit! :search_paths
+    inherit! :complete
     # Pods for testing
   end
 
   target 'Way.TodayUITests' do
     inherit! :search_paths
+    use_frameworks!
     # Pods for testing
   end
 

@@ -31,4 +31,14 @@ class WayTodayStateDefault: WayTodayState {
       _subjectOn.value = on
     }
   }
+
+  var soundOn: Bool {
+    get {
+      return UserDefaults.standard.bool(forKey: "sndon")
+    }
+    set(on) {
+      UserDefaults.standard.set(on, forKey: "sndon")
+    }
+  }
+
 }
