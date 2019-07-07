@@ -1,3 +1,5 @@
 *.vim
 Pods/
-Way.Today.xcodeproj/xcuserdata/dsa.xcuserdatad
+Way.Today.xcodeproj/xcuserdata
+Way.Today.xcworkspace/xcuserdata
+Way.Today.xcodeproj/project.xcworkspace/xcuserdata
