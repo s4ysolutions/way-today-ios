@@ -7,31 +7,68 @@
 //
 
 import UIKit
+import Rasat
+import CoreLocation
 
 class ViewController: UIViewController {
-  var waytoday: WayTodayState
+  @IBOutlet var buttonOnOff: UIButton!
+  @IBOutlet var buttonSoundOnOff: UIButton!
+  @IBOutlet var labelOff: UILabel!
+  @IBOutlet var labelOn: UILabel!
+  @IBOutlet var ledGPS: UIImageView!
+  @IBOutlet var ledPin: UIImageView!
+  @IBOutlet var ledUpload: UIImageView!
+
+
+  private let imageLedBlue = UIImage(named: "led_rect_blue")
+  private let imageLedGreen = UIImage(named: "led_rect_green")
+  private let imageLedRed = UIImage(named: "led_rect_red")
+  private let imageLedOff = UIImage(named: "led_rect_yellow")
+  private let locationService: LocationService
+  private var disposeBag: DisposeBag?
+  private var waytoday: WayTodayState
 
   init(waytoday: WayTodayState, locationService: LocationService) {
     self.waytoday = waytoday
+    self.locationService = locationService
     super.init(nibName: nil, bundle: nil)
   }
 
   required init?(coder aDecoder: NSCoder) {
     waytoday = WayTodayStateDefault.shared
+    self.locationService = LocationServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
     super.init(coder: aDecoder)
   }
 
-  @IBOutlet var buttonOnOff: UIButton!
-  @IBOutlet var buttonSoundOnOff: UIButton!
-  @IBOutlet var labelOff: UILabel!
-  @IBOutlet var labelOn: UILabel!
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    labelOn.isHidden = true
+    labelOff.isHidden = true
+    setButtonOnOffImage()
+    setButtonSoundOnOffImage()
+    setLedGPS(status: locationService.status)
+    doSubscriptions()
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    disposeBag?.dispose()
+    disposeBag = nil
+    super.viewDidDisappear(animated)
+  }
+
+  private func doSubscriptions(){
+    disposeBag = DisposeBag()
+    disposeBag!.add(locationService.observableStatus.subscribe(id: "vc", handler:{status in
+      self.setLedGPS(status: status)
+    }))
+    disposeBag!.add(locationService.observableLocation.subscribe(handler: {
+      location in
+      self.lightLedPin()
+    }))
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setButtonOnOffImage()
-    setButtonSoundOnOffImage()
-    labelOn.isHidden = true
-    labelOff.isHidden = true
   }
 
   @IBAction
@@ -46,19 +83,19 @@ class ViewController: UIViewController {
                      animations: {labelToAnimate!.alpha=0.0},
                      completion: {ok in labelToAnimate!.isHidden = true})
       /*
-      UIView.transition(with: labelToAnimate!,
-                        duration: 2.0,
-                        options: [.transitionCurlUp],
-                        animations: {
-                          labelToAnimate!.alpha=0.0
+       UIView.transition(with: labelToAnimate!,
+       duration: 2.0,
+       options: [.transitionCurlUp],
+       animations: {
+       labelToAnimate!.alpha=0.0
 
-      },
-                        completion: {
-                          ok in
-                          labelToAnimate!.isHidden = true
+       },
+       completion: {
+       ok in
+       labelToAnimate!.isHidden = true
 
-      })
- */
+       })
+       */
     }
   }
 
@@ -84,5 +121,37 @@ class ViewController: UIViewController {
     }
   }
 
+  private let locationManager = CLLocationManager()
+  private func setLedGPS(status: LocationServiceStatus){
+    switch status {
+    case LocationServiceStatus.started:
+      ledGPS.image = imageLedGreen
+    case LocationServiceStatus.stopped:
+      ledGPS.image = imageLedOff
+    case LocationServiceStatus.needAuthorization:
+      locationManager.requestAlwaysAuthorization()
+      ledGPS.image = imageLedRed
+    default:
+      ledGPS.image = imageLedRed
+    }
+  }
+
+  private var ledPinAnimation = false
+  private var i = 0
+  private func lightLedPin(){
+    if (ledPinAnimation) {
+      print("skip")
+      return
+    }
+    ledPinAnimation = true
+    self.ledPin.image = self.imageLedBlue
+
+    print("green")
+    DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
+      self.ledPin.image = self.imageLedOff
+      self.ledPinAnimation = false
+      print("off")
+    })
+  }
 }
 

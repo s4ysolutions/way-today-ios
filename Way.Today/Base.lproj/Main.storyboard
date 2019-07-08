@@ -117,6 +117,7 @@
                             <constraint firstItem="vi4-Wb-cQP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="Mn8-G4-AAp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rRr-d6-sp7" secondAttribute="trailing" constant="56" id="Mx4-bD-3em"/>
                             <constraint firstItem="Y2g-tq-8Fq" firstAttribute="bottom" secondItem="elI-rm-8Ih" secondAttribute="top" constant="-8" id="O2B-Zp-JEI"/>
+                            <constraint firstItem="zJa-Vq-754" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-97" id="QlD-Q4-fNq"/>
                             <constraint firstItem="zJa-Vq-754" firstAttribute="bottom" secondItem="09f-jw-FbL" secondAttribute="bottom" constant="1" id="WXL-5O-viK"/>
                             <constraint firstItem="Log-W2-2Fb" firstAttribute="centerX" secondItem="SHe-9F-N3p" secondAttribute="centerX" id="Y3a-mY-Ldn"/>
                             <constraint firstItem="elI-rm-8Ih" firstAttribute="bottom" secondItem="Log-W2-2Fb" secondAttribute="bottom" id="a5x-vf-5BP"/>
@@ -128,7 +129,6 @@
                             <constraint firstItem="LnW-vy-XI3" firstAttribute="centerX" secondItem="uSA-AC-8Xd" secondAttribute="centerX" id="rwg-Zj-EmC"/>
                             <constraint firstItem="rRr-d6-sp7" firstAttribute="bottom" secondItem="Y2g-tq-8Fq" secondAttribute="top" constant="-8" id="srH-rf-sas"/>
                             <constraint firstItem="Log-W2-2Fb" firstAttribute="centerY" secondItem="oji-K3-dnC" secondAttribute="centerY" id="tZd-Ci-UaR"/>
-                            <constraint firstItem="vi4-Wb-cQP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-64" id="u1g-tn-1cH"/>
                             <constraint firstItem="vi4-Wb-cQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wk5-gm-lRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -138,6 +138,9 @@
                         <outlet property="buttonSoundOnOff" destination="oji-K3-dnC" id="FAA-Ld-C1r"/>
                         <outlet property="labelOff" destination="g0v-7R-O6U" id="c0u-Ho-dUy"/>
                         <outlet property="labelOn" destination="BFK-3i-YFC" id="T0g-PS-QUE"/>
+                        <outlet property="ledGPS" destination="SHe-9F-N3p" id="EOU-kw-1zf"/>
+                        <outlet property="ledPin" destination="Y2g-tq-8Fq" id="qWJ-78-q5B"/>
+                        <outlet property="ledUpload" destination="uSA-AC-8Xd" id="chg-Yj-X4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

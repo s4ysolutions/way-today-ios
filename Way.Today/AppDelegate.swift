@@ -15,7 +15,13 @@ import UIKit
   var locationService: LocationService = LocationServiceDefault(log: LogDefault.shared, wayTodayState: WayTodayStateDefault.shared)
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+
+    if let keys = launchOptions?.keys {
+      if keys.contains(.location) {
+        locationService.start()
+      }
+    }
+
     return true
   }
 

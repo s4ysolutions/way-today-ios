@@ -9,8 +9,18 @@
 import CoreLocation
 import Rasat
 
+enum LocationServiceStatus : Int32 {
+  case unknown
+  case disabled
+  case needAuthorization
+  case stopped
+  case started
+  case problem
+}
+
 protocol LocationService {
-//  func startObserve()
-//  func stopObserve()
-//  var observableLocation: Observable<CLLocation> {get}
+  var status: LocationServiceStatus {get}
+  var observableStatus: Observable<LocationServiceStatus> {get}
+  var observableLocation: Observable<CLLocation> {get}
+  func start()
 }

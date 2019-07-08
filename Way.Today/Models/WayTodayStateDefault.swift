@@ -28,7 +28,7 @@ class WayTodayStateDefault: WayTodayState {
     }
     set(on) {
       UserDefaults.standard.set(on, forKey: "on")
-      _subjectOn.value = on
+      _subjectOn.value=on
     }
   }
 
@@ -40,5 +40,16 @@ class WayTodayStateDefault: WayTodayState {
       UserDefaults.standard.set(on, forKey: "sndon")
     }
   }
+
+  var tid: String {
+    get {
+      return UserDefaults.standard.string(forKey: "tid") ?? ""
+    }
+
+    set(on) {
+      UserDefaults.standard.set(on, forKey: "tid")
+    }
+  }
+
 
 }

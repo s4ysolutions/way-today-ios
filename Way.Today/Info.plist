@@ -22,6 +22,8 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Because Way.Today will track your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Because Way.Today will track your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -49,8 +51,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Because Way.Today will track your location</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -9,6 +9,7 @@ target 'Way.Today' do
   # Pods for Way.Today
   pod 'Rasat'
   pod 'SwiftGRPC'
+  pod 'Toast-Swift', '~> 4.0.1'
 
   target 'Way.TodayTests' do
     inherit! :complete
