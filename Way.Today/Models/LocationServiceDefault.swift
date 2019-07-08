@@ -12,7 +12,10 @@ class LocationServiceDefault: NSObject, LocationService{
 
   private static var _shared: LocationService?
   static func shared(log: Log, wayTodayState: WayTodayState) -> LocationService {
-    return LocationServiceDefault(log: log, wayTodayState: wayTodayState)
+    if (_shared == nil) {
+      _shared = LocationServiceDefault(log: log, wayTodayState: wayTodayState)
+    }
+    return _shared!
   }
 
   private class LocationDelegate: NSObject, CLLocationManagerDelegate {
@@ -96,7 +99,6 @@ class LocationServiceDefault: NSObject, LocationService{
   }
 
   private func stop() {
-    let manager = CLLocationManager()
     manager.stopUpdatingLocation()
     _status = .stopped
     _channelStatus.broadcast(_status)

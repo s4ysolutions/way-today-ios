@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34044E43904804AC5BF0B122 /* Pods_Way_TodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E3514F1E098E47DD87D04D /* Pods_Way_TodayUITests.framework */; };
+		412D700122D335960018A53D /* WayTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D700022D335960018A53D /* WayTodayService.swift */; };
+		412D700322D336940018A53D /* WayTodayServiceDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D700222D336940018A53D /* WayTodayServiceDefault.swift */; };
 		41BA3D3C22D0686400850FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D3B22D0686400850FD3 /* AppDelegate.swift */; };
 		41BA3D3E22D0686400850FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D3D22D0686400850FD3 /* ViewController.swift */; };
 		41BA3D4122D0686400850FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41BA3D3F22D0686400850FD3 /* Main.storyboard */; };
@@ -21,6 +23,9 @@
 		41BA3D7322D1081900850FD3 /* LocationServiceDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7222D1081900850FD3 /* LocationServiceDefault.swift */; };
 		41BA3D7522D11DBE00850FD3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7422D11DBE00850FD3 /* Log.swift */; };
 		41BA3D7722D11E2500850FD3 /* LogDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7622D11E2500850FD3 /* LogDefault.swift */; };
+		41F5180B22D34BAA007B5B48 /* tracker.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180822D34BAA007B5B48 /* tracker.grpc.swift */; };
+		41F5180C22D34BAA007B5B48 /* tracker.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180922D34BAA007B5B48 /* tracker.pb.swift */; };
+		41F5180D22D34BAA007B5B48 /* location.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180A22D34BAA007B5B48 /* location.pb.swift */; };
 		8659B0CF38436A42E217FABA /* Pods_Way_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9E20CB39785772F39D8B07 /* Pods_Way_Today.framework */; };
 		E2AAD0061C00F7DAB4AA50AB /* Pods_Way_Today_Way_TodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EE394D99AD4CCB97AAF182 /* Pods_Way_Today_Way_TodayTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +54,8 @@
 		23EE2A819A46C24E17669523 /* Pods-Way.Today-Way.TodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Way.Today-Way.TodayUITests.release.xcconfig"; path = "Target Support Files/Pods-Way.Today-Way.TodayUITests/Pods-Way.Today-Way.TodayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		302018BE20F143AFB9A3A8B3 /* Pods-Way.TodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Way.TodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-Way.TodayUITests/Pods-Way.TodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B5783C7C492E6140B6F6270 /* Pods-Way.Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Way.Today.release.xcconfig"; path = "Target Support Files/Pods-Way.Today/Pods-Way.Today.release.xcconfig"; sourceTree = "<group>"; };
+		412D700022D335960018A53D /* WayTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayTodayService.swift; sourceTree = "<group>"; };
+		412D700222D336940018A53D /* WayTodayServiceDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayTodayServiceDefault.swift; sourceTree = "<group>"; };
 		41BA3D3822D0686400850FD3 /* Way.Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Way.Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41BA3D3B22D0686400850FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41BA3D3D22D0686400850FD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +75,9 @@
 		41BA3D7222D1081900850FD3 /* LocationServiceDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceDefault.swift; sourceTree = "<group>"; };
 		41BA3D7422D11DBE00850FD3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		41BA3D7622D11E2500850FD3 /* LogDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDefault.swift; sourceTree = "<group>"; };
+		41F5180822D34BAA007B5B48 /* tracker.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tracker.grpc.swift; sourceTree = "<group>"; };
+		41F5180922D34BAA007B5B48 /* tracker.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tracker.pb.swift; sourceTree = "<group>"; };
+		41F5180A22D34BAA007B5B48 /* location.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = location.pb.swift; sourceTree = "<group>"; };
 		4C65A149C70707AADAEA5C78 /* Pods-Way.TodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Way.TodayUITests.release.xcconfig"; path = "Target Support Files/Pods-Way.TodayUITests/Pods-Way.TodayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89EE394D99AD4CCB97AAF182 /* Pods_Way_Today_Way_TodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Way_Today_Way_TodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9318499615E844AB1DC2C553 /* Pods-Way.Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Way.Today.debug.xcconfig"; path = "Target Support Files/Pods-Way.Today/Pods-Way.Today.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 		41BA3D3A22D0686400850FD3 /* Way.Today */ = {
 			isa = PBXGroup;
 			children = (
+				41F5180122D33E79007B5B48 /* grps */,
 				41BA3D6922D0989C00850FD3 /* Models */,
 				41BA3D3B22D0686400850FD3 /* AppDelegate.swift */,
 				41BA3D3D22D0686400850FD3 /* ViewController.swift */,
@@ -168,8 +179,20 @@
 				41BA3D7222D1081900850FD3 /* LocationServiceDefault.swift */,
 				41BA3D7422D11DBE00850FD3 /* Log.swift */,
 				41BA3D7622D11E2500850FD3 /* LogDefault.swift */,
+				412D700022D335960018A53D /* WayTodayService.swift */,
+				412D700222D336940018A53D /* WayTodayServiceDefault.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		41F5180122D33E79007B5B48 /* grps */ = {
+			isa = PBXGroup;
+			children = (
+				41F5180A22D34BAA007B5B48 /* location.pb.swift */,
+				41F5180822D34BAA007B5B48 /* tracker.grpc.swift */,
+				41F5180922D34BAA007B5B48 /* tracker.pb.swift */,
+			);
+			path = grps;
 			sourceTree = "<group>";
 		};
 		A100BAEDCF27AABFEDC1AAEB /* Frameworks */ = {
@@ -443,6 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412D700122D335960018A53D /* WayTodayService.swift in Sources */,
+				41F5180D22D34BAA007B5B48 /* location.pb.swift in Sources */,
+				412D700322D336940018A53D /* WayTodayServiceDefault.swift in Sources */,
 				41BA3D3E22D0686400850FD3 /* ViewController.swift in Sources */,
 				41BA3D7522D11DBE00850FD3 /* Log.swift in Sources */,
 				41BA3D7722D11E2500850FD3 /* LogDefault.swift in Sources */,
@@ -450,7 +476,9 @@
 				41BA3D7322D1081900850FD3 /* LocationServiceDefault.swift in Sources */,
 				41BA3D7122D106B900850FD3 /* LocationService.swift in Sources */,
 				41BA3D6F22D0A55400850FD3 /* WayTodayState.swift in Sources */,
+				41F5180B22D34BAA007B5B48 /* tracker.grpc.swift in Sources */,
 				41BA3D6B22D098D900850FD3 /* WayTodayStateDefault.swift in Sources */,
+				41F5180C22D34BAA007B5B48 /* tracker.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

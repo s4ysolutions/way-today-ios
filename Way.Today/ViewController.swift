@@ -27,16 +27,20 @@ class ViewController: UIViewController {
   private let locationService: LocationService
   private var disposeBag: DisposeBag?
   private var waytoday: WayTodayState
+  private var waytodayService: WayTodayService
 
-  init(waytoday: WayTodayState, locationService: LocationService) {
+  init(waytoday: WayTodayState, locationService: LocationService, waytodayService: WayTodayService) {
     self.waytoday = waytoday
     self.locationService = locationService
+    self.waytodayService = waytodayService
+
     super.init(nibName: nil, bundle: nil)
   }
 
   required init?(coder aDecoder: NSCoder) {
     waytoday = WayTodayStateDefault.shared
-    self.locationService = LocationServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
+    locationService = LocationServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
+    waytodayService = WayTodayServiceDefault.shared
     super.init(coder: aDecoder)
   }
 
@@ -73,6 +77,12 @@ class ViewController: UIViewController {
 
   @IBAction
   func clickOnOff(_ sender: UIButton) {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let payload = formatter.string(from: Date())
+
+    waytodayService.ping(payload: payload)
+    /*
     waytoday.on = !waytoday.on
     setButtonOnOffImage()
     let labelToAnimate = waytoday.on ? labelOn : labelOff
@@ -82,21 +92,8 @@ class ViewController: UIViewController {
       UIView.animate(withDuration: 1.0,
                      animations: {labelToAnimate!.alpha=0.0},
                      completion: {ok in labelToAnimate!.isHidden = true})
-      /*
-       UIView.transition(with: labelToAnimate!,
-       duration: 2.0,
-       options: [.transitionCurlUp],
-       animations: {
-       labelToAnimate!.alpha=0.0
-
-       },
-       completion: {
-       ok in
-       labelToAnimate!.isHidden = true
-
-       })
-       */
     }
+ */
   }
 
   private func setButtonOnOffImage() {
@@ -140,17 +137,14 @@ class ViewController: UIViewController {
   private var i = 0
   private func lightLedPin(){
     if (ledPinAnimation) {
-      print("skip")
       return
     }
     ledPinAnimation = true
     self.ledPin.image = self.imageLedBlue
 
-    print("green")
     DispatchQueue.main.asyncAfter(deadline: .now()+0.25, execute: {
       self.ledPin.image = self.imageLedOff
       self.ledPinAnimation = false
-      print("off")
     })
   }
 }

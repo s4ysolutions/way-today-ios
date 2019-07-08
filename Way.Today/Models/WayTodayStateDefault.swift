@@ -18,6 +18,7 @@ class WayTodayStateDefault: WayTodayState {
   private let _subjectOn = Subject<Bool>(UserDefaults.standard.bool(forKey: "on"))
   var observableOn: Observable<Bool> {
     get {
+      print("get state observable")
       return _subjectOn.observable
     }
   }
