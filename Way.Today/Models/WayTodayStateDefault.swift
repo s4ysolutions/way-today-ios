@@ -42,13 +42,18 @@ class WayTodayStateDefault: WayTodayState {
     }
   }
 
+  var _tid: String = ""
   var tid: String {
     get {
-      return UserDefaults.standard.string(forKey: "tid") ?? ""
+      if (_tid == "") {
+        _tid = UserDefaults.standard.string(forKey: "tid") ?? ""
+      }
+      return _tid
     }
 
-    set(on) {
-      UserDefaults.standard.set(on, forKey: "tid")
+    set(tid) {
+      _tid = tid
+      UserDefaults.standard.set(tid, forKey: "tid")
     }
   }
 

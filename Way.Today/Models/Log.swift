@@ -9,4 +9,6 @@
 protocol Log {
   func debug(_ msg: StaticString)
   func debug(_ msg: StaticString, _ args: CVarArg...)
+  func error(_ msg: StaticString)
+  func error(_ msg: StaticString, _ args: CVarArg...)
 }

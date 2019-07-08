@@ -7,5 +7,6 @@
 //
 
 protocol WayTodayService {
-  func ping(payload: String)
+  func ping(payload: String) throws
+  func generateTid(prevTid: String, complete: @escaping (_ tid: String) -> Void) throws
 }

@@ -63,6 +63,9 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" horizontalCompressionResistancePriority="850" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi4-Wb-cQP" userLabel="button_refresh">
                                 <rect key="frame" x="268" y="36" width="44" height="44"/>
                                 <state key="normal" backgroundImage="refresh"/>
+                                <connections>
+                                    <action selector="clickTid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AdH-We-DCt"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="280" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="elI-rm-8Ih">
                                 <rect key="frame" x="138" y="428" width="44" height="44"/>
@@ -136,8 +139,10 @@
                     <connections>
                         <outlet property="buttonOnOff" destination="7wQ-TD-V6h" id="i7Q-Lc-QQ8"/>
                         <outlet property="buttonSoundOnOff" destination="oji-K3-dnC" id="FAA-Ld-C1r"/>
+                        <outlet property="buttonTid" destination="vi4-Wb-cQP" id="bJy-Oh-TIW"/>
                         <outlet property="labelOff" destination="g0v-7R-O6U" id="c0u-Ho-dUy"/>
                         <outlet property="labelOn" destination="BFK-3i-YFC" id="T0g-PS-QUE"/>
+                        <outlet property="labelTid" destination="zJa-Vq-754" id="zxj-Or-u4W"/>
                         <outlet property="ledGPS" destination="SHe-9F-N3p" id="EOU-kw-1zf"/>
                         <outlet property="ledPin" destination="Y2g-tq-8Fq" id="qWJ-78-q5B"/>
                         <outlet property="ledUpload" destination="uSA-AC-8Xd" id="chg-Yj-X4J"/>

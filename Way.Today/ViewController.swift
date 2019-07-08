@@ -13,12 +13,13 @@ import CoreLocation
 class ViewController: UIViewController {
   @IBOutlet var buttonOnOff: UIButton!
   @IBOutlet var buttonSoundOnOff: UIButton!
+  @IBOutlet var buttonTid: UIButton!
   @IBOutlet var labelOff: UILabel!
   @IBOutlet var labelOn: UILabel!
+  @IBOutlet var labelTid: UILabel!
   @IBOutlet var ledGPS: UIImageView!
   @IBOutlet var ledPin: UIImageView!
   @IBOutlet var ledUpload: UIImageView!
-
 
   private let imageLedBlue = UIImage(named: "led_rect_blue")
   private let imageLedGreen = UIImage(named: "led_rect_green")
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
   private let imageLedOff = UIImage(named: "led_rect_yellow")
   private let locationService: LocationService
   private var disposeBag: DisposeBag?
+  private let TITLE_NO_ID = "No ID"
   private var waytoday: WayTodayState
   private var waytodayService: WayTodayService
 
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
   required init?(coder aDecoder: NSCoder) {
     waytoday = WayTodayStateDefault.shared
     locationService = LocationServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
-    waytodayService = WayTodayServiceDefault.shared
+    waytodayService = WayTodayServiceDefault.shared(log: LogDefault.shared)
     super.init(coder: aDecoder)
   }
 
@@ -51,6 +53,7 @@ class ViewController: UIViewController {
     setButtonOnOffImage()
     setButtonSoundOnOffImage()
     setLedGPS(status: locationService.status)
+    setTid()
     doSubscriptions()
   }
 
@@ -73,16 +76,51 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    if (waytoday.tid == "") {
+      requestTid()
+    }
+  }
+
+  @IBAction
+  func clickTid(_ sender: UIButton) {
+    requestTid()
+  }
+
+  var gettingTid = false
+  private func requestTid() {
+    if gettingTid {
+      return
+    }
+    gettingTid = true
+    buttonTid.isEnabled = false
+    do {
+      try waytodayService.generateTid(prevTid: waytoday.tid, complete: { tid in
+        DispatchQueue.main.sync {
+          self.buttonTid.isEnabled = true
+          self.waytoday.tid = tid
+          self.setTid()
+          self.gettingTid = false
+        }
+      })
+    }catch{
+      gettingTid = false
+      print(error)
+    }
+  }
+
+  private func setTid() {
+    labelTid.text = waytoday.tid == "" ? TITLE_NO_ID : waytoday.tid
   }
 
   @IBAction
   func clickOnOff(_ sender: UIButton) {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    let payload = formatter.string(from: Date())
-
-    waytodayService.ping(payload: payload)
     /*
+     let formatter = DateFormatter()
+     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+     let payload = formatter.string(from: Date())
+
+     waytodayService.ping(payload: payload)
+     */
     waytoday.on = !waytoday.on
     setButtonOnOffImage()
     let labelToAnimate = waytoday.on ? labelOn : labelOff
@@ -93,7 +131,6 @@ class ViewController: UIViewController {
                      animations: {labelToAnimate!.alpha=0.0},
                      completion: {ok in labelToAnimate!.isHidden = true})
     }
- */
   }
 
   private func setButtonOnOffImage() {

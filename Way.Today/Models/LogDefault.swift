@@ -26,4 +26,13 @@ class LogDefault: Log {
     os_log(msg, log: OSLog.default, type: .debug, args)
   }
 
+
+  func error(_ msg: StaticString) {
+    os_log(msg, log: OSLog.default, type: .error)
+  }
+
+  func error(_ msg: StaticString, _ args: CVarArg...) {
+    os_log(msg, log: OSLog.default, type: .error, args)
+  }
+
 }
