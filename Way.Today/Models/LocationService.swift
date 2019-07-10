@@ -22,5 +22,5 @@ protocol LocationService {
   var status: LocationServiceStatus {get}
   var observableStatus: Observable<LocationServiceStatus> {get}
   var observableLocation: Observable<CLLocation> {get}
-  func start()
+  // func start()
 }

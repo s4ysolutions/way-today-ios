@@ -7,6 +7,7 @@ target 'Way.Today' do
   use_frameworks!
 
   # Pods for Way.Today
+  pod 'CryptoSwift', '~> 0.15.0'
   pod 'Rasat'
   pod 'SwiftGRPC'
   pod 'Toast-Swift', '~> 4.0.1'

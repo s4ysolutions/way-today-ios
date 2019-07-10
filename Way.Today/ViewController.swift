@@ -21,6 +21,7 @@ class ViewController: UIViewController {
   @IBOutlet var ledPin: UIImageView!
   @IBOutlet var ledUpload: UIImageView!
 
+  private let imageLedLightBlue = UIImage(named: "led_rect_lightblue")
   private let imageLedBlue = UIImage(named: "led_rect_blue")
   private let imageLedGreen = UIImage(named: "led_rect_green")
   private let imageLedRed = UIImage(named: "led_rect_red")
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
   required init?(coder aDecoder: NSCoder) {
     waytoday = WayTodayStateDefault.shared
     locationService = LocationServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
-    waytodayService = WayTodayServiceDefault.shared(log: LogDefault.shared)
+    waytodayService = WayTodayServiceDefault.shared(log: LogDefault.shared, wayTodayState: waytoday)
     super.init(coder: aDecoder)
   }
 
@@ -53,6 +54,7 @@ class ViewController: UIViewController {
     setButtonOnOffImage()
     setButtonSoundOnOffImage()
     setLedGPS(status: locationService.status)
+    ledUpload.image = imageLedOff
     setTid()
     doSubscriptions()
   }
@@ -72,6 +74,22 @@ class ViewController: UIViewController {
       location in
       self.lightLedPin()
     }))
+    disposeBag!.add(UploaderDefault
+      .shared(log: LogDefault.shared, wayTodayState: waytoday)
+      .observableState
+      .subscribe(id:"uploadedController", handler: {uploaderState in
+        DispatchQueue.main.async {
+          switch(uploaderState){
+          case UploaderState.UPLOADING:
+            self.ledUpload.image = self.imageLedLightBlue
+          case UploaderState.ERROR:
+            self.ledUpload.image = self.imageLedRed
+          default:
+            self.ledUpload.image = self.imageLedOff
+          }
+        }
+      })
+    )
   }
 
   override func viewDidLoad() {

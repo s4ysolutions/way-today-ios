@@ -12,16 +12,34 @@ import UIKit
   class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var locationService: LocationService = LocationServiceDefault(log: LogDefault.shared, wayTodayState: WayTodayStateDefault.shared)
+  // class variable in order to have application lifetime
+  let log: Log
+  let locationService: LocationService
+  let uploader: Uploader
+  let wayTodayState: WayTodayState
+
+  override init(){
+    log = LogDefault.shared
+    wayTodayState = WayTodayStateDefault.shared
+    uploader = UploaderDefault.shared(log: log, wayTodayState: wayTodayState)
+    locationService = LocationServiceDefault.shared(log: log, wayTodayState: wayTodayState)
+    super.init()
+  }
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+    do {
+      try uploader.startListen(locationService: locationService, wayTodayService: WayTodayServiceDefault.shared(log: log, wayTodayState: WayTodayStateDefault.shared))
+    }catch{
+      log.error("Error start listening")
+    }
+/* started in init in any case
     if let keys = launchOptions?.keys {
       if keys.contains(.location) {
         locationService.start()
       }
     }
-
+ */
     return true
   }
 
@@ -45,6 +63,7 @@ import UIKit
 
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    uploader.stopListen()
   }
 
 

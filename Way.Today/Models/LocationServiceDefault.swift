@@ -20,13 +20,15 @@ class LocationServiceDefault: NSObject, LocationService{
 
   private class LocationDelegate: NSObject, CLLocationManagerDelegate {
     let channelLocation = Channel<CLLocation>()
-    var log: Log
+    let log: Log
+
     init(log: Log) {
       self.log = log
     }
 
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
       if (locations.count > 0) {
+        log.debug("LocationServiceDefault: new location")
         channelLocation.broadcast(locations.last!)
       }
     }
@@ -75,7 +77,10 @@ class LocationServiceDefault: NSObject, LocationService{
     stopObserveState()
   }
 
-  func start() {
+  private func start() {
+    if (_status == .started) {
+      return
+    }
     if (!CLLocationManager.locationServicesEnabled()){
       _status = .disabled
       _channelStatus.broadcast(.disabled)
@@ -90,8 +95,9 @@ class LocationServiceDefault: NSObject, LocationService{
 
     manager.delegate = locationManagerDelegate
     manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-    manager.allowsBackgroundLocationUpdates = true
     manager.pausesLocationUpdatesAutomatically = true
+    // manager.desiredAccuracy = kCLLocationAccuracyBest
+    manager.allowsBackgroundLocationUpdates = true
     manager.startUpdatingLocation()
     _status = .started
     _channelStatus.broadcast(.started)

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:sha1.swift">
+   </FileRef>
+   <FileRef
       location = "group:Way.Today.xcodeproj">
    </FileRef>
    <FileRef

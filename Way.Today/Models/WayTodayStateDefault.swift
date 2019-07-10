@@ -42,6 +42,7 @@ class WayTodayStateDefault: WayTodayState {
     }
   }
 
+  var first = true
   var _tid: String = ""
   var tid: String {
     get {

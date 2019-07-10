@@ -5,6 +5,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - CryptoSwift (0.15.0)
   - gRPC-Core (1.19.0):
     - gRPC-Core/Implementation (= 1.19.0)
     - gRPC-Core/Interface (= 1.19.0)
@@ -26,6 +27,7 @@ PODS:
   - Toast-Swift (4.0.1)
 
 DEPENDENCIES:
+  - CryptoSwift (~> 0.15.0)
   - Rasat
   - SwiftGRPC
   - Toast-Swift (~> 4.0.1)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
+    - CryptoSwift
     - gRPC-Core
     - nanopb
     - Rasat
@@ -42,6 +45,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
   gRPC-Core: bd9472c8daa2e414b9f8038ba667bf56ce0e02b8
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Rasat: fdb8f8a8f401111bf9fed9817e786448301edf3f
@@ -49,6 +53,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: b94fbbc6fa2783bc604aec7e2baff592d962dcd1
+PODFILE CHECKSUM: 3217b586390874ec47876a6437afac7114eb503e
 
 COCOAPODS: 1.7.3
