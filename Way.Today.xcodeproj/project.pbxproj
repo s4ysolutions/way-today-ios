@@ -204,7 +204,6 @@
 				41F5180A22D34BAA007B5B48 /* location.pb.swift */,
 				41F5180822D34BAA007B5B48 /* tracker.grpc.swift */,
 				41F5180922D34BAA007B5B48 /* tracker.pb.swift */,
-				41F5181022D388B7007B5B48 /* secret.swift */,
 			);
 			path = grps;
 			sourceTree = "<group>";
@@ -212,6 +211,7 @@
 		41F5181522D3A967007B5B48 /* wsse */ = {
 			isa = PBXGroup;
 			children = (
+				41F5181022D388B7007B5B48 /* secret.swift */,
 				41F5181322D38C50007B5B48 /* iso8601.swift */,
 				41F5180E22D38896007B5B48 /* wsse.swift */,
 			);
