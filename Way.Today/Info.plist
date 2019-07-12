@@ -23,11 +23,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Because Way.Today will track your location</string>
+	<string>Way.Today intended to track your geo location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Because Way.Today will track your location</string>
+	<string>Way.Today intended to track your geo location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Because Way.Today will track your location</string>
+	<string>Way.Today intended to track your geo location</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

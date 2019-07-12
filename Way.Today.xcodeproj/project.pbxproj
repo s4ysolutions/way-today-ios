@@ -23,11 +23,11 @@
 		41BA3D7322D1081900850FD3 /* LocationServiceDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7222D1081900850FD3 /* LocationServiceDefault.swift */; };
 		41BA3D7522D11DBE00850FD3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7422D11DBE00850FD3 /* Log.swift */; };
 		41BA3D7722D11E2500850FD3 /* LogDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA3D7622D11E2500850FD3 /* LogDefault.swift */; };
+		41E92C1E22D81F3600D410D2 /* secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E92C1D22D81F3600D410D2 /* secret.swift */; };
 		41F5180B22D34BAA007B5B48 /* tracker.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180822D34BAA007B5B48 /* tracker.grpc.swift */; };
 		41F5180C22D34BAA007B5B48 /* tracker.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180922D34BAA007B5B48 /* tracker.pb.swift */; };
 		41F5180D22D34BAA007B5B48 /* location.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180A22D34BAA007B5B48 /* location.pb.swift */; };
 		41F5180F22D38896007B5B48 /* wsse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5180E22D38896007B5B48 /* wsse.swift */; };
-		41F5181122D388B7007B5B48 /* secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5181022D388B7007B5B48 /* secret.swift */; };
 		41F5181422D38C50007B5B48 /* iso8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5181322D38C50007B5B48 /* iso8601.swift */; };
 		41F5181A22D3C4C3007B5B48 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5181922D3C4C3007B5B48 /* Uploader.swift */; };
 		41F5181C22D3C589007B5B48 /* UploaderDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5181B22D3C589007B5B48 /* UploaderDefault.swift */; };
@@ -80,11 +80,11 @@
 		41BA3D7222D1081900850FD3 /* LocationServiceDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceDefault.swift; sourceTree = "<group>"; };
 		41BA3D7422D11DBE00850FD3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		41BA3D7622D11E2500850FD3 /* LogDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDefault.swift; sourceTree = "<group>"; };
+		41E92C1D22D81F3600D410D2 /* secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secret.swift; sourceTree = "<group>"; };
 		41F5180822D34BAA007B5B48 /* tracker.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tracker.grpc.swift; sourceTree = "<group>"; };
 		41F5180922D34BAA007B5B48 /* tracker.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tracker.pb.swift; sourceTree = "<group>"; };
 		41F5180A22D34BAA007B5B48 /* location.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = location.pb.swift; sourceTree = "<group>"; };
 		41F5180E22D38896007B5B48 /* wsse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wsse.swift; sourceTree = "<group>"; };
-		41F5181022D388B7007B5B48 /* secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secret.swift; sourceTree = "<group>"; };
 		41F5181322D38C50007B5B48 /* iso8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iso8601.swift; sourceTree = "<group>"; };
 		41F5181922D3C4C3007B5B48 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		41F5181B22D3C589007B5B48 /* UploaderDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploaderDefault.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		41F5181522D3A967007B5B48 /* wsse */ = {
 			isa = PBXGroup;
 			children = (
-				41F5181022D388B7007B5B48 /* secret.swift */,
+				41E92C1D22D81F3600D410D2 /* secret.swift */,
 				41F5181322D38C50007B5B48 /* iso8601.swift */,
 				41F5180E22D38896007B5B48 /* wsse.swift */,
 			);
@@ -492,7 +492,6 @@
 				412D700122D335960018A53D /* WayTodayService.swift in Sources */,
 				41F5180D22D34BAA007B5B48 /* location.pb.swift in Sources */,
 				41F5181422D38C50007B5B48 /* iso8601.swift in Sources */,
-				41F5181122D388B7007B5B48 /* secret.swift in Sources */,
 				412D700322D336940018A53D /* WayTodayServiceDefault.swift in Sources */,
 				41F5181C22D3C589007B5B48 /* UploaderDefault.swift in Sources */,
 				41BA3D3E22D0686400850FD3 /* ViewController.swift in Sources */,
@@ -501,6 +500,7 @@
 				41BA3D3C22D0686400850FD3 /* AppDelegate.swift in Sources */,
 				41BA3D7322D1081900850FD3 /* LocationServiceDefault.swift in Sources */,
 				41BA3D7122D106B900850FD3 /* LocationService.swift in Sources */,
+				41E92C1E22D81F3600D410D2 /* secret.swift in Sources */,
 				41BA3D6F22D0A55400850FD3 /* WayTodayState.swift in Sources */,
 				41F5180B22D34BAA007B5B48 /* tracker.grpc.swift in Sources */,
 				41F5180F22D38896007B5B48 /* wsse.swift in Sources */,
@@ -682,6 +682,7 @@
 			baseConfigurationReference = 9318499615E844AB1DC2C553 /* Pods-Way.Today.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR995K5J82;
 				INFOPLIST_FILE = Way.Today/Info.plist;
@@ -692,6 +693,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = solutions.s4y.waytoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -702,6 +704,7 @@
 			baseConfigurationReference = 3B5783C7C492E6140B6F6270 /* Pods-Way.Today.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR995K5J82;
 				INFOPLIST_FILE = Way.Today/Info.plist;
@@ -712,6 +715,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = solutions.s4y.waytoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -21,9 +21,11 @@ class LocationServiceDefault: NSObject, LocationService{
   private class LocationDelegate: NSObject, CLLocationManagerDelegate {
     let channelLocation = Channel<CLLocation>()
     let log: Log
+    let locationService: LocationService
 
-    init(log: Log) {
-      self.log = log
+    init(locationService: LocationService, log: Log) {
+        self.locationService = locationService
+        self.log = log
     }
 
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -32,11 +34,19 @@ class LocationServiceDefault: NSObject, LocationService{
         channelLocation.broadcast(locations.last!)
       }
     }
+    
+    func locationManager(_ manager: CLLocationManager,
+                                  didChangeAuthorization status: CLAuthorizationStatus) {
+      log.debug("LocationServiceDefault: authorization status changed")
+        locationService.stop()
+        locationService.start()
+    }
   }
-  private let locationManagerDelegate: LocationDelegate
+  
+  private var locationManagerDelegate: LocationDelegate?
   var observableLocation: Observable<CLLocation> {
     get{
-      return locationManagerDelegate.channelLocation.observable
+      return locationManagerDelegate!.channelLocation.observable
     }
   }
 
@@ -62,8 +72,8 @@ class LocationServiceDefault: NSObject, LocationService{
   init(log: Log, wayTodayState: WayTodayState) {
     self.log = log
     self.wayTodayState = wayTodayState
-    locationManagerDelegate = LocationDelegate(log: log)
     super.init()
+    locationManagerDelegate = LocationDelegate(locationService: self, log: log)
 
     if wayTodayState.on {
       start()
@@ -77,7 +87,9 @@ class LocationServiceDefault: NSObject, LocationService{
     stopObserveState()
   }
 
-  private func start() {
+  internal func start() {
+    manager.delegate = locationManagerDelegate
+
     if (_status == .started) {
       return
     }
@@ -93,7 +105,6 @@ class LocationServiceDefault: NSObject, LocationService{
       return
     }
 
-    manager.delegate = locationManagerDelegate
     manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     manager.pausesLocationUpdatesAutomatically = true
     // manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -104,7 +115,7 @@ class LocationServiceDefault: NSObject, LocationService{
     self.log.debug("Location Service started")
   }
 
-  private func stop() {
+  internal func stop() {
     manager.stopUpdatingLocation()
     _status = .stopped
     _channelStatus.broadcast(_status)
