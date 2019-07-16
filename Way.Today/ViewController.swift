@@ -202,5 +202,35 @@ class ViewController: UIViewController {
       self.ledPinAnimation = false
     })
   }
+  
+  @IBAction func clickMapButton(_ sender: UIButton) {
+    guard let url=URL(string: "https://way.today/#\(waytoday.tid)!30m") else {
+      return //be safe
+    }
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+      UIApplication.shared.openURL(url)
+    }
+  }
+  
+  @IBAction func clickShareButton(_ sender: UIButton) {
+    guard let url=URL(string: "https://way.today/#\(waytoday.tid)!30m") else {
+      return //be safe
+    }
+    
+    // set up activity view controller
+    let textToShare = [ url ] as [Any]
+    let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+    activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+    
+    // exclude some activity types from the list (optional)
+   activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.openInIBooks]
+    
+    // present the view controller
+    self.present(activityViewController, animated: true, completion: nil)
+
+  }
+  
 }
 

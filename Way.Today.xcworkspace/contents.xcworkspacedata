@@ -4,6 +4,96 @@
    <FileRef
       location = "group:Way.Today.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Way.Today"
+      name = "Way.Today">
+      <Group
+         location = "group:Way.Today/wsse"
+         name = "wsse">
+         <FileRef
+            location = "group:Way.Today/wsse/secret.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/wsse/iso8601.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/wsse/wsse.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Way.Today/grps"
+         name = "grps">
+         <FileRef
+            location = "group:Way.Today/grps/location.pb.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/grps/tracker.grpc.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/grps/tracker.pb.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Way.Today/Models"
+         name = "Models">
+         <FileRef
+            location = "group:Way.Today/Models/WayTodayStateDefault.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/WayTodayState.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/LocationService.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/LocationServiceDefault.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/Log.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/LogDefault.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/WayTodayService.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/WayTodayServiceDefault.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/Uploader.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Way.Today/Models/UploaderDefault.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Way.Today/AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Way.Today/ViewController.swift">
+      </FileRef>
+      <Group
+         location = "group:Way.Today"
+         name = "Main.storyboard">
+         <FileRef
+            location = "group:Way.Today/Base.lproj/Main.storyboard">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Way.Today/Assets.xcassets">
+      </FileRef>
+      <Group
+         location = "group:Way.Today"
+         name = "LaunchScreen.storyboard">
+         <FileRef
+            location = "group:Way.Today/Base.lproj/LaunchScreen.storyboard">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Way.Today/Info.plist">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
